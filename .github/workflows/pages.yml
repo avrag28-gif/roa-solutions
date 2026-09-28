@@ -21,6 +21,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Fetch supplied ROA assets
+        run: |
+          set -euo pipefail
+          mkdir -p public/resources
+          base="https://roa-solutions-oyhm3m.v2.appdeploy.ai/resources"
+          curl -fL --retry 3 "$base/roa_wordmark_dark_mode.png" -o public/resources/roa_wordmark_dark_mode.png
+          curl -fL --retry 3 "$base/roa_solutions_primary_lockup_light.png" -o public/resources/roa_solutions_primary_lockup_light.png
+          curl -fL --retry 3 "$base/live-app-canvas-detail-2026-07-30.webp" -o public/resources/live-app-canvas-detail-2026-07-30.webp
+          curl -fL --retry 3 "$base/live-app-crop-share-conference-2026-07-30.webp" -o public/resources/live-app-crop-share-conference-2026-07-30.webp
+          curl -fL --retry 3 "$base/live-app-presenting-roa-deck-2026-07-30.webp" -o public/resources/live-app-presenting-roa-deck-2026-07-30.webp
+          curl -fL --retry 3 "$base/live-app-canvas-brandline-deck-2026-07-30.webp" -o public/resources/live-app-canvas-brandline-deck-2026-07-30.webp
+          curl -fL --retry 3 "$base/live-app-service-orders-2026-07-30.webp" -o public/resources/live-app-service-orders-2026-07-30.webp
       - run: npm install
       - run: BASE_PATH=/roa-solutions/ npm run build
       - uses: actions/upload-pages-artifact@v3
