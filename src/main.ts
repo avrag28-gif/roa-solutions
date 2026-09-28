@@ -1,9 +1,20 @@
 import './styles.css';
 
+const asset = (name: string) => 'https://roa-solutions-oyhm3m.v2.appdeploy.ai/resources/' + name;
+const assets = {
+  wordmark: asset('roa_wordmark_dark_mode.png'),
+  lockup: asset('roa_solutions_primary_lockup_light.png'),
+  uiCanvas: asset('live-app-canvas-detail-2026-07-30.webp'),
+  uiCrop: asset('live-app-crop-share-conference-2026-07-30.webp'),
+  uiPresent: asset('live-app-presenting-roa-deck-2026-07-30.webp'),
+  uiBrand: asset('live-app-canvas-brandline-deck-2026-07-30.webp'),
+  uiService: asset('live-app-service-orders-2026-07-30.webp'),
+};
+
 document.querySelector('#app')!.innerHTML = `
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" data-header>
-  <a class="brand" href="#top" aria-label="ROA Solutions home"></a>
+  <a class="brand" href="#top" aria-label="ROA Solutions home"><img src="${assets.wordmark}" alt="ROA Solutions"></a>
   <nav class="desktop-nav" aria-label="Primary"><a href="#product">Product</a><a href="#experience">Experience</a><a href="#capabilities">Capabilities</a><a href="#integration">Integration</a><a href="#solutions">Solutions</a></nav>
   <a class="header-cta" href="#contact">Talk to ROA <span>↗</span></a>
   <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
@@ -12,7 +23,7 @@ document.querySelector('#app')!.innerHTML = `
 
 <main id="main">
 <section class="hero section-dark" id="top">
-  <div class="hero-room" aria-hidden="true"><div class="room-ceiling"></div><div class="room-wall left"></div><div class="room-wall right"></div><div class="room-floor"></div><div class="room-table"></div><div class="room-display"><div class="display-bezel"><div class="ui-art"><span class="bar"></span><span class="side"></span><span class="canvas"></span><span class="tile t1"></span><span class="tile t2"></span><span class="tile t3"></span><span class="label">ROA D1 / LIVE CANVAS</span></div></div></div><div class="room-d1"><span class="d1-mark">D1</span><span class="d1-light"></span></div><div class="hero-frame frame-corners"><i></i><i></i><i></i><i></i></div></div>
+  <div class="hero-room" aria-hidden="true"><div class="room-ceiling"></div><div class="room-wall left"></div><div class="room-wall right"></div><div class="room-floor"></div><div class="room-table"></div><div class="room-display"><div class="display-bezel"><img src="${assets.uiCanvas}" alt=""></div></div><div class="room-d1"><span class="d1-mark">D1</span><span class="d1-light"></span></div><div class="hero-frame frame-corners"><i></i><i></i><i></i><i></i></div></div>
   <div class="hero-content container"><p class="eyebrow">ROA D1 · ROOM EXPERIENCE SYSTEM</p><h1>Control<br><em>the room.</em></h1><p class="hero-lede">Matrix, compute and software, unified in one professional system. Works with the technology already in your room.</p><div class="hero-actions"><a class="button button-light" href="#experience">Explore D1 <span>↗</span></a><a class="text-link" href="#product">See the system <span>↓</span></a></div></div>
   <div class="hero-bottom container"><span>01</span><span class="hero-line"></span><span>ROA SOLUTIONS</span></div>
 </section>
@@ -24,7 +35,7 @@ document.querySelector('#app')!.innerHTML = `
     <button class="source-card" type="button" data-source="share"><span class="source-number">02</span><span class="source-thumb thumb-share"></span><span class="source-name">Wireless share</span></button>
     <button class="source-card" type="button" data-source="stream"><span class="source-number">03</span><span class="source-thumb thumb-stream"></span><span class="source-name">Streaming source</span></button>
   </div><div class="demo-stage"><div class="stage-label">VIDEO WALL <span>LIVE</span></div><div class="stage-wall"><div class="stage-window w1" data-window="camera"><span>ROOM CAMERA</span></div><div class="stage-window w2" data-window="share"><span>WIRELESS SHARE</span></div><div class="stage-window w3" data-window="stream"><span>STREAMING</span></div></div><div class="stage-result" aria-live="polite">Select a live source.</div></div></div>
-  <div class="experience-proof"><div class="proof-label">THE REAL INTERFACE</div><div class="ui-large"><div class="ui-art"><span class="bar"></span><span class="side"></span><span class="canvas"></span><span class="tile t1"></span><span class="tile t2"></span><span class="tile t3"></span><span class="label">ROA D1 / LIVE CANVAS</span></div><span class="ui-corner tl"></span><span class="ui-corner tr"></span><span class="ui-corner bl"></span><span class="ui-corner br"></span></div><p>Actual ROA D1 product UI. The website presents it; it does not redesign it.</p></div>
+  <div class="experience-proof"><div class="proof-label">THE REAL INTERFACE</div><div class="ui-large"><img src="${assets.uiCanvas}" alt="ROA D1 interface showing live sources arranged on a canvas" loading="lazy"><span class="ui-corner tl"></span><span class="ui-corner tr"></span><span class="ui-corner bl"></span><span class="ui-corner br"></span></div><p>Actual ROA D1 product UI. The website presents it; it does not redesign it.</p></div>
 </div></section>
 
 <section class="product section-graphite" id="product"><div class="container">
@@ -36,15 +47,15 @@ document.querySelector('#app')!.innerHTML = `
 <section class="capabilities section-paper" id="capabilities"><div class="container">
   <div class="section-intro"><p class="eyebrow dark">CAPABILITIES</p><h2>The room, <em>without the technical ceremony.</em></h2><p class="intro-copy narrow">D1 brings meeting surfaces together: sources, presentation, scenes, room controls and hospitality.</p></div>
   <div class="capability-grid">
-    <article class="cap-card cap-feature"><div class="cap-media"><div class="ui-art"><span class="bar"></span><span class="side"></span><span class="canvas"></span><span class="tile t1"></span><span class="tile t2"></span><span class="tile t3"></span><span class="label">LIVE SOURCES / CROP / SHARE</span></div></div><div class="cap-copy"><span>01</span><h3>Live sources</h3><p>See what is on each source before you use it.</p></div></article>
-    <article class="cap-card"><div class="cap-media"><div class="ui-art dark"><span class="bar"></span><span class="side"></span><span class="canvas"></span><span class="tile t1"></span><span class="tile t2"></span><span class="tile t3"></span><span class="label">PRESENTATION STATE</span></div></div><div class="cap-copy"><span>02</span><h3>Presentation</h3><p>Bring a deck onto the same canvas as live room sources.</p></div></article>
-    <article class="cap-card"><div class="cap-media"><div class="ui-art"><span class="bar"></span><span class="side"></span><span class="canvas"></span><span class="tile t1"></span><span class="tile t2"></span><span class="tile t3"></span><span class="label">PRESENTATIONS</span></div></div><div class="cap-copy"><span>03</span><h3>Presentations</h3><p>Choose the presentation you need and place it into the room.</p></div></article>
-    <article class="cap-card dark-card"><div class="cap-media"><div class="ui-art dark"><span class="bar"></span><span class="side"></span><span class="canvas"></span><span class="tile t1"></span><span class="tile t2"></span><span class="tile t3"></span><span class="label">ROOM SERVICE</span></div></div><div class="cap-copy"><span>04</span><h3>Hospitality</h3><p>Service belongs on the same surface as the meeting.</p></div></article>
+    <article class="cap-card cap-feature"><div class="cap-media"><img src="${assets.uiCrop}" alt="ROA D1 crop and share workflow" loading="lazy"></div><div class="cap-copy"><span>01</span><h3>Live sources</h3><p>See what is on each source before you use it.</p></div></article>
+    <article class="cap-card"><div class="cap-media"><img src="${assets.uiPresent}" alt="ROA D1 presentation state" loading="lazy"></div><div class="cap-copy"><span>02</span><h3>Presentation</h3><p>Bring a deck onto the same canvas as live room sources.</p></div></article>
+    <article class="cap-card"><div class="cap-media"><img src="${assets.uiPresent}" alt="ROA D1 presentations interface" loading="lazy"></div><div class="cap-copy"><span>03</span><h3>Presentations</h3><p>Choose the presentation you need and place it into the room.</p></div></article>
+    <article class="cap-card dark-card"><div class="cap-media"><img src="${assets.uiService}" alt="ROA D1 Service interface for hospitality" loading="lazy"></div><div class="cap-copy"><span>04</span><h3>Hospitality</h3><p>Service belongs on the same surface as the meeting.</p></div></article>
   </div>
   <div class="cap-list" aria-label="Additional capabilities"><div><span>05</span><strong>Video wall</strong><p>Compose live windows with free placement and scale.</p></div><div><span>06</span><strong>Scenes</strong><p>Bring saved room states into the host workflow.</p></div><div><span>07</span><strong>Room control</strong><p>Bring room controls into one consistent surface.</p></div></div>
 </div></section>
 
-<section class="presentation section-bone"><div class="container presentation-grid"><div class="presentation-copy"><p class="eyebrow dark">PRESENTATION</p><h2>From a file<br>to <em>the room.</em></h2><p>Present a deck, keep live sources visible and move between states without handing the meeting to a technician.</p><a class="button button-dark" href="#contact">Talk to ROA <span>↗</span></a></div><div class="presentation-visual"><div class="presentation-stack"><div class="ui-art"><span class="bar"></span><span class="side"></span><span class="canvas"></span><span class="tile t1"></span><span class="tile t2"></span><span class="tile t3"></span><span class="label">ROA D1 / PRESENTATION</span></div></div><div class="stack-note">PRESENT / SELECT / PLACE</div></div></div></section>
+<section class="presentation section-bone"><div class="container presentation-grid"><div class="presentation-copy"><p class="eyebrow dark">PRESENTATION</p><h2>From a file<br>to <em>the room.</em></h2><p>Present a deck, keep live sources visible and move between states without handing the meeting to a technician.</p><a class="button button-dark" href="#contact">Talk to ROA <span>↗</span></a></div><div class="presentation-visual"><div class="presentation-stack"><img src="${assets.uiPresent}" alt="ROA D1 presentation state" loading="lazy"><img src="${assets.uiBrand}" alt="ROA D1 presentation composed with live room sources" loading="lazy"></div><div class="stack-note">PRESENT / SELECT / PLACE</div></div></div></section>
 
 <section class="integration section-dark" id="integration"><div class="container">
   <div class="section-intro split"><div><p class="eyebrow">INTEGRATION</p><h2>Works with<br><em>what is already there.</em></h2></div><p class="intro-copy">D1 is designed to work within existing professional AV environments rather than replace them.</p></div>
@@ -70,7 +81,7 @@ document.querySelector('#app')!.innerHTML = `
 <section class="cta section-paper" id="contact"><div class="cta-frame frame-corners"><i></i><i></i><i></i><i></i></div><div class="container cta-inner"><p class="eyebrow dark">ROA D1</p><h2>Make the room<br><em>feel simple.</em></h2><p>Bring ROA into the next room you are designing, specifying or hosting.</p><a class="button button-dark" href="mailto:hello@roa.solutions">Talk to ROA <span>↗</span></a></div></section>
 </main>
 
-<footer class="site-footer section-dark"><div class="container footer-top"><div class="footer-brand"><p>Professional room technology, designed to stay out of the way.</p></div><div class="footer-nav"><div><span>Explore</span><a href="#product">Product</a><a href="#experience">Experience</a><a href="#capabilities">Capabilities</a></div><div><span>Connect</span><a href="#integration">Integration</a><a href="#solutions">Solutions</a><a href="mailto:hello@roa.solutions">Talk to ROA</a></div></div></div><div class="container footer-bottom"><span>© 2026 ROA Solutions</span><span>ROA · D1</span><span>WEBSITE EXPERIENCE</span></div></footer>
+<footer class="site-footer section-dark"><div class="container footer-top"><div class="footer-brand"><img src="${assets.lockup}" alt="ROA Solutions"><p>Professional room technology, designed to stay out of the way.</p></div><div class="footer-nav"><div><span>Explore</span><a href="#product">Product</a><a href="#experience">Experience</a><a href="#capabilities">Capabilities</a></div><div><span>Connect</span><a href="#integration">Integration</a><a href="#solutions">Solutions</a><a href="mailto:hello@roa.solutions">Talk to ROA</a></div></div></div><div class="container footer-bottom"><span>© 2026 ROA Solutions</span><span>ROA · D1</span><span>WEBSITE EXPERIENCE</span></div></footer>
 `;
 
 const menuButton = document.querySelector(
