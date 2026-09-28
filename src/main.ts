@@ -1,9 +1,9 @@
 import './styles.css';
 
-const asset = (name: string) => 'https://roa-solutions-oyhm3m.v2.appdeploy.ai/resources/' + name;
+const asset = (name: string) => `${import.meta.env.BASE_URL}resources/${name}`;
 const assets = {
-  wordmark: asset('roa_wordmark_dark_mode.png'),
-  lockup: asset('roa_solutions_primary_lockup_light.png'),
+  wordmark: asset('roa-wordmark.svg'),
+  lockup: asset('roa-lockup.svg'),
   uiCanvas: asset('live-app-canvas-detail-2026-07-30.webp'),
   uiCrop: asset('live-app-crop-share-conference-2026-07-30.webp'),
   uiPresent: asset('live-app-presenting-roa-deck-2026-07-30.webp'),
